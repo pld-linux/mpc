@@ -7,6 +7,7 @@ License:	GPL
 Group:		Applications
 Source0:	http://mercury.chem.pitt.edu/~shank/%{name}-%{version}.tar.gz
 # Source0-md5:	c8411da7936662312cf9483f3490e285
+URL:		http://www.musicpd.org/mpc.shtml
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
