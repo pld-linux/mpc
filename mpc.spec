@@ -1,5 +1,5 @@
 Summary:	Comandline client for mpd
-Summary(pl):	Klient wiersza poleceÒ dla mpd
+Summary(pl.UTF-8):   Klient wiersza polece≈Ñ dla mpd
 Name:		mpc
 Version:	0.12.0
 Release:	0.1
@@ -13,8 +13,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Comandline client for mpd daemon.
 
-%description -l pl
-Klient dla daemona mpd obs≥ugiwany z wiersza poleceÒ.
+%description -l pl.UTF-8
+Klient dla daemona mpd obs≈Çugiwany z wiersza polece≈Ñ.
 
 %prep
 %setup -q
