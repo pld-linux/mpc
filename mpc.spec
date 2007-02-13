@@ -1,5 +1,5 @@
 Summary:	Comandline client for mpd
-Summary(pl.UTF-8):   Klient wiersza poleceń dla mpd
+Summary(pl.UTF-8):	Klient wiersza poleceń dla mpd
 Name:		mpc
 Version:	0.12.0
 Release:	0.1
