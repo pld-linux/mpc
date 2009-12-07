@@ -1,13 +1,14 @@
 Summary:	Comandline client for mpd
 Summary(pl.UTF-8):	Klient wiersza poleceń dla mpd
 Name:		mpc
-Version:	0.17
+Version:	0.19
 Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://downloads.sourceforge.net/musicpd/mpc-%{version}.tar.bz2
-# Source0-md5:	3f642c2c2ad7a57a9be7a03351c8c558
+# Source0-md5:	9ab2967d9ec719b06a86f3b4121be654
 URL:		http://www.musicpd.org/mpc.shtml
+BuildRequires:	libmpdclient-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
