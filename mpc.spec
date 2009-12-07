@@ -9,6 +9,7 @@ Source0:	http://downloads.sourceforge.net/musicpd/mpc-%{version}.tar.bz2
 # Source0-md5:	9ab2967d9ec719b06a86f3b4121be654
 URL:		http://www.musicpd.org/mpc.shtml
 BuildRequires:	libmpdclient-devel
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
