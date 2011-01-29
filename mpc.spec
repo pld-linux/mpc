@@ -1,14 +1,16 @@
 Summary:	Comandline client for mpd
 Summary(pl.UTF-8):	Klient wiersza poleceń dla mpd
 Name:		mpc
-Version:	0.19
+Version:	0.20
 Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://downloads.sourceforge.net/musicpd/mpc-%{version}.tar.bz2
-# Source0-md5:	9ab2967d9ec719b06a86f3b4121be654
+# Source0-md5:	24c81ad6afe6099e8d7a6826ef4b7105
 URL:		http://www.musicpd.org/mpc.shtml
-BuildRequires:	libmpdclient-devel
+BuildRequires:	autoconf >= 2.60
+BuildRequires:	automake
+BuildRequires:	libmpdclient-devel >= 2.2
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,6 +24,10 @@ Klient dla daemona mpd obsługiwany z wiersza poleceń.
 %setup -q
 
 %build
+%{__aclocal} -I m4
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
