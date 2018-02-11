@@ -1,17 +1,18 @@
 Summary:	Comandline client for mpd
 Summary(pl.UTF-8):	Klient wiersza poleceń dla mpd
 Name:		mpc
-Version:	0.28
+Version:	0.29
 Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://www.musicpd.org/download/mpc/0/%{name}-%{version}.tar.xz
-# Source0-md5:	e9cfaf17ab1db54dba4df4b08aa0db3f
+# Source0-md5:	0c4a880d65c10ca6e5209ba6886e9832
 URL:		http://www.musicpd.org
-BuildRequires:	autoconf >= 2.60
-BuildRequires:	automake
 BuildRequires:	libmpdclient-devel >= 2.9
+BuildRequires:	meson
+BuildRequires:	ninja
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.727
 Requires:	libmpdclient >= 2.9
 Suggests:	bash-completion-%{name}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -37,29 +38,27 @@ This package provides bash-completion for mpc.
 %setup -q
 
 %build
-%{__aclocal} -I m4
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%configure
-%{__make}
+%meson build
+%meson_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install \
-	doc_DATA= \
-	DESTDIR=$RPM_BUILD_ROOT
+%meson_install -C build
+
+mv $RPM_BUILD_ROOT%{_mandir}/man1/man/* $RPM_BUILD_ROOT%{_mandir}/man1
 
 install -d $RPM_BUILD_ROOT/etc/bash_completion.d
-cp -p doc/mpc-completion.bash $RPM_BUILD_ROOT/etc/bash_completion.d
+cp -p contrib/mpc-completion.bash $RPM_BUILD_ROOT/etc/bash_completion.d
+
+rm -r $RPM_BUILD_ROOT%{_docdir}/mpc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README NEWS
-%doc doc/mpd-m3u-handler.sh doc/mpd-pls-handler.sh doc/mppledit
+%doc AUTHORS README.rst NEWS
+%doc contrib/mpd-m3u-handler.sh contrib/mpd-pls-handler.sh
 %attr(755,root,root) %{_bindir}/mpc
 %{_mandir}/man1/mpc.1*
 
