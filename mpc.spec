@@ -1,12 +1,12 @@
 Summary:	Comandline client for mpd
 Summary(pl.UTF-8):	Klient wiersza poleceń dla mpd
 Name:		mpc
-Version:	0.29
+Version:	0.30
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Applications
 Source0:	http://www.musicpd.org/download/mpc/0/%{name}-%{version}.tar.xz
-# Source0-md5:	0c4a880d65c10ca6e5209ba6886e9832
+# Source0-md5:	c71693d2f03bd4a4bed96e304b24d906
 URL:		http://www.musicpd.org
 BuildRequires:	libmpdclient-devel >= 2.9
 BuildRequires:	meson
@@ -44,8 +44,6 @@ This package provides bash-completion for mpc.
 %install
 rm -rf $RPM_BUILD_ROOT
 %meson_install -C build
-
-mv $RPM_BUILD_ROOT%{_mandir}/man1/man/* $RPM_BUILD_ROOT%{_mandir}/man1
 
 install -d $RPM_BUILD_ROOT/etc/bash_completion.d
 cp -p contrib/mpc-completion.bash $RPM_BUILD_ROOT/etc/bash_completion.d
