@@ -28,9 +28,7 @@ Klient dla daemona mpd obsługiwany z wiersza poleceń.
 Summary:	bash-completion for mpc
 Group:		Applications/Shells
 Requires:	bash-completion
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description -n bash-completion-%{name}
 This package provides bash-completion for mpc.
