@@ -5,7 +5,7 @@ Version:	0.33
 Release:	1
 License:	GPL v2+
 Group:		Applications
-Source0:	http://www.musicpd.org/download/mpc/0/%{name}-%{version}.tar.xz
+Source0:	https://www.musicpd.org/download/mpc/0/%{name}-%{version}.tar.xz
 # Source0-md5:	7d1f5c308b5df1f2af0a01360a235af2
 URL:		http://www.musicpd.org
 BuildRequires:	libmpdclient-devel >= 2.9
