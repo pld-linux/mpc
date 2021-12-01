@@ -12,7 +12,7 @@ BuildRequires:	libmpdclient-devel >= 2.9
 BuildRequires:	meson >= 0.47
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.727
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	sphinx-pdg
 Requires:	libmpdclient >= 2.9
 Suggests:	bash-completion-%{name}
@@ -39,11 +39,11 @@ This package provides bash-completion for mpc.
 %build
 %meson build \
 	-Ddocumentation=enabled
-%meson_build -C build
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%meson_install -C build
+%ninja_install -C build
 
 install -d $RPM_BUILD_ROOT/etc/bash_completion.d
 cp -p contrib/mpc-completion.bash $RPM_BUILD_ROOT/etc/bash_completion.d
