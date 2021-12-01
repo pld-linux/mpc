@@ -12,6 +12,7 @@ BuildRequires:	libmpdclient-devel >= 2.16
 BuildRequires:	meson >= 0.47
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	sphinx-pdg
 BuildRequires:	tar >= 1:1.22
