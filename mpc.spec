@@ -14,6 +14,8 @@ BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	sphinx-pdg
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Requires:	libmpdclient >= 2.9
 Suggests:	bash-completion-%{name}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
